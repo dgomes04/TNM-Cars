@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+
+/* Navbar */
+nav {
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background: #2A2A2A;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+  
+}
+
+nav .logo {
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 5px;
+}
+
+nav ul li a {
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+  color: #111;
+  background: #fff;
+}
+
+nav .menu-btn i {
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  nav {
+    padding: 0 40px 0 50px;
+  }
+}
+
+@media (max-width: 920px) {
+  nav .menu-btn i {
+    display: block;
+  }
+
+  #click:checked~.menu-btn i:before {
+    content: "\f00d";
+  }
+
+  nav ul {
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+    z-index: 1;
+  }
+
+  #click:checked~ul {
+    left: 0;
+  }
+
+  nav ul li {
+    width: 100%;
+    margin: 40px 0;
+  }
+
+  nav ul li a {
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  #click:checked~ul li a {
+    margin-left: 0px;
+  }
+
+  nav ul li a.active,
+  nav ul li a:hover {
+    background: none;
+    color: cyan;
+  }
+}
+
+/*fim navbar*/
+
+/* Main */
+
+  main{
+    background-color: white;
+    
+  }
+
+  .logo {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+  }
+  
+
+  
+  #cardCarro{
+    
+    margin: 1vh;
+    margin-left: 10vh;
+  }
+
+  .card {
+    background-color: #ffffff;
+    max-width: 18em;
+    margin-top: 1em;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 1em 2em 2.5em rgba(1, 2, 68, 0.08);
+  }
+  .image-container {
+    text-align: center;
+  }
+  img {
+    max-width: 100%;
+    object-fit: contain;
+    height: 15em;
+  }
+  
+  @media screen and (max-width: 720px) {
+    img {
+      max-width: 100%;
+      object-fit: contain;
+      height: 10em;
+    }
+    .card {
+      max-width: 10em;
+      margin-top: 1em;
+      
+    }
+  
+  }
+
+  #nome_esquerda{
+    float: left !important;
+   
+  }
+  #valor_direita{
+    float: right !important;
+  }
+  #dadosCarros{
+    max-width: 65%;
+    border-radius: 0;
+    border: 3px solid #eb2f06;
+  }
+
+
+  /* filtros */
+ 
+
+/* carrossel */
+
+
+
+
+  /*footer*/
+
+  footer {
+    display: block;
+    position: relative;
+    width: 100%;
+    clear: both;
+    background: #2A2A2A !important;
+  }
+  
+  footer .content-footer {
+    max-width: 1350px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  footer .content-footer p,
+  a {
+    color: #fff;
+  }
+  
+  footer .content-footer .box {
+    width: 33%;
+    transition: all 0.4s ease;
+  }
+  
+  footer .content-footer .topic {
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+  }
+  
+  footer .content-footer p {
+    text-align: justify;
+  }
+  
+  footer .content-footer .lower .topic {
+    margin: 24px 0 5px 0;
+  } */
+  
+  footer .content-footer .lower i {
+    padding-right: 16px;
+  } 
+  
+   footer .content-footer .middle {
+    padding-left: 80px;
+  }
+  
+   footer .content-footer .middle a {
+    line-height: 32px;
+  }
+  
+  footer .content-footer .right input[type="text"] {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    color: #d9d9d9;
+    background: #000;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 17px;
+    border: 2px solid #222222;
+  }
+  
+  footer .content-footer .right input[type="submit"] {
+    height: 42px;
+    width: 100%;
+    font-size: 18px;
+    color: #d9d9d9;
+    background: #eb2f06;
+    outline: none;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 12px;
+    border: 2px solid #eb2f06;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .content-footer .right input[type="submit"]:hover {
+    background: none;
+    color: #eb2f06;
+  }
+  
+  footer .content-footer .media-icons a {
+    font-size: 16px;
+    height: 45px;
+    width: 45px;
+    display: inline-block;
+    text-align: center;
+    line-height: 43px;
+    border-radius: 5px;
+    border: 2px solid #222222;
+    margin: 30px 5px 0 0;
+    transition: all 0.3s ease;
+  }
+  
+  .content-footer .media-icons a:hover {
+    border-color: #eb2f06;
+  }
+  
+  footer .bottom {
+    width: 100%;
+    text-align: right;
+    color: #d9d9d9;
+    padding: 0 40px 5px 0;
+  }
+  
+  footer .bottom a {
+    color: #eb2f06;
+  }
+  
+  footer a {
+    transition: all 0.3s ease;
+  }
+  
+  footer a:hover {
+    color: #eb2f06;
+  }
+  
+  @media (max-width:1100px) {
+  
+  
+  
+    footer .content-footer .middle {
+      padding-left: 50px;
+    }
+  
+  }
+  
+  @media (max-width:950px) {
+    footer .content-footer .box {
+      width: 50%;
+    }
+  
+    .content-footer .right {
+      margin-top: 40px;
+    }
+  }
+  
+  @media (max-width:560px) {
+    footer {
+      position: relative;
+    }
+  
+    footer .content-footer .box {
+      width: 100%;
+      margin-top: 30px;
+    }
+  
+    footer .content-footer .middle {
+      padding-left: 0;
+    }
+  }
+
+  /* teste */
+
+

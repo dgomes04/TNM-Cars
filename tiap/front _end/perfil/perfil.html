@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="perfil.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+   
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <meta charset="UTF-I" />
+    <title>Perfil</title>
+</head>
+
+<body>
+    <!-- navbar -->
+    <header>
+        <nav>
+            <div class="logo">TNM Cars</div>
+            <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <ul>
+                <li><a class="active" href="../index.html">Home</a></li>
+                <li><a href="../carros/carros.html">Carros</a></li>
+                <li><a href="../CFsite/cfSite.html">Como funciona o site?</a></li>
+                <li id="perfil"><a href="../perfil/perfil.html">Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Perfil de usuario -->
+    <div class="page-content page-container " id="page-content">
+        <div class="padding d-flex justify-content-center" >
+            <div class="row container " id="user-data">
+                <div class="col-x1-12 col-md-12 " >
+                    <div class="card user-card-full" >
+                        <div class="row m-l-0 m-r-0">
+                            <div class="col-sm-12 bg-c-lite-green user-profile">
+                                <div class="card-block text-center text-white">
+                                    <div class="m-b-25">
+                                        <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius"
+                                            alt="User-Profile-Image">
+                                    </div>
+                                    <h6 id="nomePerfil" class="f-w-600">Ricardo</h6>
+
+                                    <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="card-block text-center">
+                                    <h6 class="m-b-20 p-b-5 b-b-default f-w-600">INFORMAÇÃO</h6>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <p class="m-b-1 f-w-60">Email</p>
+                                            <h6 id="email" class="text-muted f-w-400"></h6>
+                                            <button type="button" class="btn btn-danger" id="trocaEmail">Alterar
+                                                email</button>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="m-b-10 f-w-600">Senha</p>
+                                            <h6 id="loginSenha" class="text-muted f-w-400">******</h6>
+                                            <button type="button" class="btn btn-danger" id="trocaSenha">Alterar
+                                                senha</button>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="m-b-10 f-w-600">Usuario</p>
+                                            <h6 id="usuario" class="text-muted f-w-400"></h6>
+                                            <button type="button" class="btn btn-danger" id="trocaUsuario">Alterar
+                                                usuario</button>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p class="m-b-10 f-w-600">Telefone</p>
+                                            <h6 id="telefone" class="text-muted f-w-400"></h6>
+                                            <button type="button" class="btn btn-danger" id="trocaTelefone">Alterar
+                                                telefone</button>
+                                        </div>
+                                    </div>
+                                    <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600"></h6>
+
+                                    <ul class="social-link list-unstyled m-t-40 m-b-10"></ul>
+                                    <button type="button" class="btn btn-danger" id="deslogar">Sair</button>
+                                    <button type="button" class="btn btn-danger" id="deleteAcc">Apagar conta</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="content-footer">
+            <div class="left box">
+                <div class="upper">
+                    <div class="topic">Sobre nós</div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, voluptatem, porro dolorum harum
+                        tempore nemo excepturi velit minus reiciendis quae esse vero asperiores odio incidunt.</p>
+                </div>
+                <div class="lower">
+                    <div class="topic">Contato</div>
+                    <div class="phone">
+                        <a href="#"><i class="fas fa-phone-volume"></i>+007 9089 6767</a>
+                    </div>
+                    <div class="email">
+                        <a href="#"><i class="fas fa-envelope"></i>tnmContato@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right box">
+                <div class="topic">Inscreva-se para receber novidades</div>
+                <form action="#">
+                    <input type="text" placeholder="Digite seu email">
+                    <input type="submit" name="" value="Inscrever">
+                    <div class="media-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="bottom">
+            <p>Copyright © 2022 <a href="#">TNM Cars</a> Todos os direitos reservados</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="perfil.js"></script>
+
+</body>

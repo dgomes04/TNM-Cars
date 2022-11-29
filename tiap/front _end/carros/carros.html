@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="app.js" defer></script>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" href="carros.css">
+    <title>Carros</title>
+
+
+</head>
+
+<body id="body" onload="montaCardPesquisa()">
+    <header>
+        <nav>
+            <div class="logo">TNM Cars</div>
+            <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <ul>
+                <li><a class="active" href="../index.html" onclick="resetarForm()">Home</a></li>
+                <li><a href="../carros/carros.html" onclick="resetarForm()">Carros</a></li>
+                <li><a href="../CFsite/cfSite.html" onclick="resetarForm()">Como funciona o site?</a></li>
+                <li id="perfil"><a href="../perfil/perfil.html" onclick="resetarForm()">Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+
+
+
+
+        <section id="products">
+            <div class="container">
+                <div class="row">
+
+                    <div class="row" id="carrosDiv">
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section id="products">
+            <div class="container">
+                <div class="row">
+
+                    <div class="row mt-3" id="carrosDiv2">
+
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- teste -->
+
+
+
+    <footer>
+        <div class="content-footer">
+            <div class="left box">
+                <div class="upper">
+                    <div class="topic">Sobre nós</div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, voluptatem, porro dolorum harum
+                        tempore nemo excepturi velit minus reiciendis quae esse vero asperiores odio incidunt.</p>
+                </div>
+                <div class="lower">
+                    <div class="topic">Contato</div>
+                    <div class="phone">
+                        <a href="#"><i class="fas fa-phone-volume"></i>+007 9089 6767</a>
+                    </div>
+                    <div class="email">
+                        <a href="#"><i class="fas fa-envelope"></i>tnmContato@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right box">
+                <div class="topic">Inscreva-se para receber novidades</div>
+                <form action="#">
+                    <input type="text" name="email" id="email" placeholder="Digite seu email">
+                    <input type="submit" name="email" id="inscrever" value="Inscrever">
+                    <div class="media-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="bottom">
+            <p>Copyright © 2022 <a href="#">TNM Cars</a> Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script src="carros.js"></script>
+</body>
+
+</html>

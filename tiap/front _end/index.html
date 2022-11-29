@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Main</title>
+  <link rel="shortcut icon" href="./images/icon_tnm.png">
+  <link rel="stylesheet" href="../front _end/Homepage/style.css">
+  <!-- boxicons -->
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+  <!-- javascript -->
+
+  <script src="./Homepage/form.js" defer></script>
+  <script src="./Homepage/index.js" defer></script>
+  <script src="./Homepage/carrossel.js" defer></script>
+
+</head>
+
+
+<body  onload="verLogin(), formarSlide()">
+
+  <!-- navbar inicio -->
+  <header>
+    <nav>
+      <div class="logo">TNM Cars</div>
+      <input type="checkbox" id="click">
+      <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <ul>
+        <li><a class="active" href="#">Home</a></li>
+        <li><a href="./carros/carros.html">Carros</a></li>
+        <li><a href="./CFsite/cfSite.html">Como funciona o site?</a></li>
+        <li id="perfil"><a href="./perfil/perfil.html">Perfil</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- navbar fim -->
+
+  <!-- main inicio -->
+  <main>
+    <h1 align="center" style="color: white; margin:3vh;">Encontre seu veículo aqui</h1>
+    <div id="formulario">
+      <select id="form_cambio">
+        <option selected>Câmbio</option>
+        <option value="automatico">Automático</option>
+        <option value="manual">Manual</option>
+      </select>
+      <select id="form_modelo">
+        <option selected>Modelo</option>
+        <option value="hatch">Hatch</option>
+        <option value="sedan">Sedan</option>
+        <option value="picape">Picape</option>
+        <option value="suv">SUV</option>
+        <option value="todos">Todos</option>
+      </select>
+      <br>
+      <select id="form_gasto">
+        <option selected>Gasto combustível</option>
+        <option value="baixo">Baixo</option>
+        <option value="medio">Médio</option>
+        <option value="alto">Alto</option>
+        <option value="todos">Todos</option>
+      </select>
+      <select id="form_quant">
+        <option selected>Quantidade de parcelas</option>
+        <option value="36">12 parcelas - 36 parcelas</option>
+        <option value="80">48 parcelas - 72 parcelas</option>
+      </select>
+      <select id="form_parcelas_min">
+        <option selected>Preço mínimo da parcela</option>
+        <option value="500">120R$</option>
+        <option value="700">300R$</option>
+        <option value="1000">500R$</option>
+      </select>
+      <select id="form_parcelas">
+        <option selected>Preço máximo da parcela</option>
+        <option value="700">700R$</option>
+        <option value="900">900R$</option>
+        <option value="1300">1300R$</option>
+      </select>
+      <button id="btn_buscar">Buscar</button>
+    </div>
+
+
+    <!-- teste carrosel -->
+    <h1 align="center" style="color: white; margin: 20px;">Carros mais pesquisados</h1>
+
+    <div class="slider" id="carrossels">
+      
+    <div class="slide active">
+      <img src="https://cdn.motor1.com/images/mgl/2oWBK/s1/honda-civic-exl-2020.jpg" alt="">
+      <div class="info">
+        <h2>1.0 12v gol 1.0 12v</h2>
+        <p>Descrição teste</p>
+      </div>
+    </div>
+    <div class="slide">
+      <img src="https://cdn.discordapp.com/attachments/1006581085427220551/1037604705699905546/carro2.jpg" alt="">
+      <div class="info">
+        <h2>1.5 kwid 1.5</h2>
+        <p>Descrição teste</p>
+      </div>
+    </div>
+    <div class="slide">
+      <img src="https://cdn.discordapp.com/attachments/1006581085427220551/1037604706672971776/carro4.jpg" alt="">
+      <div class="info">
+        <h2>5.0 argo 5.0</h2>
+        <p>Descrição teste</p>
+      </div>
+    </div>
+    <div class="slide">
+      <img src="https://cdn.discordapp.com/attachments/1006581085427220551/1037604706979151902/carro5.jpg" alt="">
+      <div class="info">
+        <h2>2.0 fiesta 2.0</h2>
+        <p>Descrição teste</p>
+      </div>
+    </div>
+    <div class="slide">
+      <img src="https://cdn.discordapp.com/attachments/1006581085427220551/1037604706979151902/carro5.jpg" alt="">
+      <div class="info">
+        <h2>2.0 fiesta 2.0</h2>
+        <p>Descrição teste</p>
+      </div>
+    </div>
+    <div class="navigation">
+      <i class="fas fa-chevron-left prev-btn"></i>
+      <i class="fas fa-chevron-right next-btn"></i>
+    </div>
+    <div class="navigation-visibility">
+      <div class="slide-icon active"></div>
+      <div class="slide-icon"></div>
+      <div class="slide-icon"></div>
+      <div class="slide-icon"></div>
+      <div class="slide-icon"></div>
+    </div>
+    
+</div>
+
+
+
+    <!-- fim teste -->
+
+  </main>
+
+  <!-- main fim -->
+
+  <!-- footer inicio -->
+  <footer>
+    <div class="content-footer">
+      <div class="left box">
+        <div class="upper">
+          <div class="topic">Sobre nós</div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, voluptatem, porro dolorum harum tempore nemo
+            excepturi velit minus reiciendis quae esse vero asperiores odio incidunt.</p>
+        </div>
+        <div class="lower">
+          <div class="topic">Contato</div>
+          <div class="phone">
+            <a href="#"><i class="fas fa-phone-volume"></i>+007 9089 6767</a>
+          </div>
+          <div class="email">
+            <a href="#"><i class="fas fa-envelope"></i>tnmContato@gmail.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="right box">
+        <div class="topic">Inscreva-se para receber novidades</div>
+        <form action="#">
+          <input type="text" name="email" id="email" placeholder="Digite seu email">
+          <input type="submit" name="email" id="inscrever" value="Inscrever">
+          <div class="media-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="bottom">
+      <p>Copyright © 2022 <a href="#">TNM Cars</a> Todos os direitos reservados</p>
+    </div>
+  </footer>
+  <!-- fim footer -->
+
+
+
+</body>
+
+</html>
