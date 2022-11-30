@@ -207,6 +207,10 @@ a{
   text-decoration: none !important;
   color: white;
 }
+#email,#usuario,#telefone,#loginSenha{
+  color: black !important;
+}
+
 
 
 /* footer */

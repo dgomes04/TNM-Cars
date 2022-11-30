@@ -157,6 +157,10 @@ body {
     text-align: left;
     padding-left: 10px;
 }
+.marca{
+  right: 0;
+  position: absolute;
+}
 
 
 

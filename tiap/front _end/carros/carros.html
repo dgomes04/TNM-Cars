@@ -8,14 +8,10 @@
     <script src="app.js" defer></script>
 
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <link rel="stylesheet" href="carros.css">
+    
     <title>Carros</title>
 
 
@@ -41,10 +37,56 @@
 
     <main>
 
+        <ul id="carrosDivv">
+            <li >
+                <div class="conteudo-principal">
+                    <div class="quadrado-de-cima">
+                        <div class="quadrado-do-titulo">
+                            <input id="id"value="3" hidden>
+                            <h2>titulo</h2>
+                        </div>
+                        <div class="quadrado-do-preco">
+                            <h3 >R$ 25000,00</h3>
+                        </div>
+                    </div>
+                    <div class="quadrado-conteudo-principal">
+                        <div class="carro">
+                            <img src="../images/carro1.jpg" width="100%" height="100%"alt="">
+                        </div>
+                        <div class="descricao">
+                            <div class="detalhe">
+                                <div class="ano">
+                                    <p style="font-size: larger;">Ano</p>
+                                    <p>2009</p>
+                                </div>
+                                <div class="km">
+                                    
+                                    <p style="padding-top: 10px;">0KM</p>
+                                </div>
+                                <div class="cambio">
+                                    <h3>cambio</h3>
+
+                                    <p>automatico</p>
+                                </div>
+                            </div>
+                            <div class="mais-detalhe">
+                                <h2 style="font-weight:300; padding-top:10px;">descricao grande: Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus molestias odit autem dolores</h2>
+                            </div>
+                            
+                        </div>
+                        <div class="logo-carros">
+                            <img src="../images/mitsubish.jpg" class="logo-marca"alt="" align="center">
+                            <h2 style="text-align: center;">Oferta Mitsubishi</h2>
+                            <img src="../images/icons8-estrela-de-natal-32.png" alt="favoritar" class="favoritar" onclick="favoritar()">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+        </ul>
 
 
-
-        <section id="products">
+        <!-- <section id="products">
             <div class="container">
                 <div class="row">
 
@@ -66,7 +108,7 @@
                 </div>
             </div>
 
-        </section>
+        </section> -->
 
 
     </main>

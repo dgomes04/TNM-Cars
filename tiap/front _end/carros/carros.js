@@ -8,7 +8,7 @@ function montaCardPesquisa() {
     for (let i = 0; i < carros.length; i++) {
       let carroAtual = carros[i]
       let valor = carroAtual.valor.toString().replace(".", ",");
-      dadosCarros += `<div class="card mb-3" id="dadosCarros">
+      dadosCarros += `<a id="linkCarro" href="../carro_especifico/carro_especifico.html"><div class="card mb-3" id="dadosCarros">
         <div class="row no-gutters">
         <h2 id="nome_esquerda" >${carroAtual.marca.charAt(0).toUpperCase() + carroAtual.marca.slice(1)} ${carroAtual.nome.charAt(0).toUpperCase() + carroAtual.nome.slice(1)} ${carroAtual.modelo.toUpperCase()}</h2>
         <h3 id="valor_direita">${valor}</h3>
@@ -26,7 +26,7 @@ function montaCardPesquisa() {
             </div>
           </div>
         </div>
-      </div><br>`
+      </div></a><br>`
 
     }
 
@@ -70,10 +70,11 @@ function montaCardPesquisa() {
                       <p class="card-text"  style="display:inline; font-weight:bold; margin-right:3%;">${carroAtual[i].ano} </p>
                       <p class="card-text" style="display:inline; font-weight:bold; ">${carroAtual[i].cambio.charAt(0).toUpperCase() + carroAtual[i].cambio.slice(1)}</p>
                       <p class="card-text"> ${carroAtual[i].descrição.toUpperCase()}</p>
+                      <button>ir pra outra pagina</button>
                     </div>
                   </div>
                 </div>
-              </div><br></br>`
+              </div></a><br>`
 
         }
         document.getElementById('carrosDiv').innerHTML = salvaDados
@@ -87,16 +88,30 @@ const resetarForm = () => {
 }
 
 
+const favoritar = () => {
+  //verificar login
+  
 
-
-
-// teste filtros
-{/*  */ }
-{/* <div class="card" style="width: 30rem;" id="cardCarro">
-        <a href="#"><img class="card-img-top" src="${carroAtual.foto}" alt="Card image cap"></a>
-    <div class="card-body">
-      <p class="card-text">${carroAtual.descrição}</p>
-      <p class="card-text">R$${carroAtual.valor}</p>
-      
-    </div>
-  </div> */}
+  const token = localStorage.getItem('token');
+  
+    if (token != undefined || token != null ) {
+    const id = {"id": document.getElementById('id').value}
+    console.log(id)    
+    fetch('http://localhost:3456/carro/favoritar', {
+      method: 'POST',
+      body: JSON.stringify(id),
+      headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'token': token
+      }
+  }).then(dados => {
+      return dados.json()
+  }).then(dados => {
+      document.querySelector('.favoritar').innerHTML = `<img src="../images/icons8-estrela-de-natal-32.png" alt="favoritar" class="favoritar" onclick="favoritar()"></img>`
+  })
+        
+    }else{
+      location.assign("../login/login.html")
+    }
+}
