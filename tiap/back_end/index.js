@@ -1,4 +1,5 @@
 require('dotenv').config()
+const { porta } = require('./env')
 
 const express = require('express')
 const setupRoutes = require('./config/routes')
@@ -8,7 +9,6 @@ app.use(express.json())
 
 setupRoutes(app, express)
 
-app.listen(3456, () => {
-    console.log('aplicação rodando')
+app.listen(porta, () => {
+    console.log('aplicação rodando ' + porta)
 })
-

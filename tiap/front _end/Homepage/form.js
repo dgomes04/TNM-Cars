@@ -1,31 +1,33 @@
 let erro;
 const buscarCarros = () => {
-    token = localStorage.getItem('token');
+    const token = localStorage.getItem('token');
 
     const selectCambio = document.getElementById("form_cambio")
     const cambio = selectCambio.options[selectCambio.selectedIndex].value;
 
     const selectModelo = document.getElementById("form_modelo")
-    const modelo = selectModelo.options[selectModelo.selectedIndex].value;
+    const estilo = selectModelo.options[selectModelo.selectedIndex].value;
 
-    const selectPreco = document.getElementById("form_parcelas")
-    const preco = selectPreco.options[selectPreco.selectedIndex].value;
+    const select_preco_max = document.getElementById("form_preco_max")
+    const preco_max = select_preco_max.options[select_preco_max.selectedIndex].value;
 
-    const selectCombustivel = document.getElementById("form_gasto")
-    const combustivel = selectCombustivel.options[selectCombustivel.selectedIndex].value;
+    const select_preco_min = document.getElementById("form_preco_min")
+    const preco_min = select_preco_min.options[select_preco_min.selectedIndex].value;
 
-    const selectParcelas = document.getElementById("form_quant")
-    const quantidadeParcelas = selectParcelas.options[selectParcelas.selectedIndex].value;
+    const select_ano_minimo= document.getElementById("form_ano_minimo")
+    const ano_minimo = select_ano_minimo.options[select_ano_minimo.selectedIndex].value;
 
+    const select_ano_max = document.getElementById("form_ano_maximo")
+    const ano_max = select_ano_max.options[select_ano_max.selectedIndex].value;
 
 
     const respostas2 = {
-        valorParcela: preco,
-        qtdParcelas: quantidadeParcelas,
-        porcentagem: 37,
         cambio: cambio,
-        estilo: modelo,
-        custoCombutivel: combustivel
+        estilo: estilo,
+        anoMinimo: ano_minimo,
+        anoMaximo: ano_max,
+        precoMinimo: preco_min,
+        precoMaximo: preco_max
     }
 
     fetch('http://localhost:3456/carro_ideal', {
@@ -40,12 +42,12 @@ const buscarCarros = () => {
         return dados.json()
     }).then(dados => {
         erro = dados.error;
-
+       
         if (erro == undefined) {
 
             let salva = JSON.stringify(dados)
-            console.log(salva)
-
+            console.log(dados)
+            localStorage.removeItem("carrosForm")
             localStorage.setItem("carrosForm", salva);
             document.location.assign("./carros/carros.html")
         }

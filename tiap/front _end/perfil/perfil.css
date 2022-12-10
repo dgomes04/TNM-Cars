@@ -45,7 +45,7 @@ nav ul li a {
   font-size: 18px;
   font-weight: 500;
   padding: 8px 15px;
-  border-radius: 5px;
+  border-radius: 2px;
   letter-spacing: 1px;
   transition: all 0.3s ease;
 }

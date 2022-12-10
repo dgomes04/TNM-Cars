@@ -24,7 +24,7 @@ const formarSlide = () => {
                         <img src="${carros[i].foto}" alt="">
                         <div class="info">
                             <h2>${carros[i].modelo + carros[i].nome + carros[i].modelo}</h2>
-                            <p>${carros[i].descrição}</p>
+                            <h3 style="font-size:large;" align="center">R$${carros[i].valor}</p>
                         </div>
                   </div>`
                     
@@ -32,11 +32,13 @@ const formarSlide = () => {
                 } else {
                     salvaDados += `
                     <div class="slide">
+                        
                         <img src="${carros[i].foto}" alt="">
                         <div class="info">
                             <h2>${carros[i].modelo + " " + carros[i].nome + " " + carros[i].modelo}</h2>
-                            <p>${carros[i].descrição}</p>
+                            <p>${carros[i].valor}</p>
                         </div>
+                        
                   </div>`
                     
                 }
@@ -54,8 +56,8 @@ const formarSlide = () => {
             <div class="slide-icon"></div>
           </div>`
 
-            console.log(salvaDados)
-            document.getElementById("carrossel").innerHTML = salvaDados
+           
+            document.querySelector(".carrossel").innerHTML = salvaDados
         }
 
 

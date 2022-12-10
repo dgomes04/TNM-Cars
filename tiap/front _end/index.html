@@ -14,74 +14,201 @@
 
   <!-- javascript -->
 
+  
+
   <script src="./Homepage/form.js" defer></script>
   <script src="./Homepage/index.js" defer></script>
   <script src="./Homepage/carrossel.js" defer></script>
 
 </head>
 
+<!-- , formarSlide()  -->
+<body  onload="verLogin()">
 
-<body  onload="verLogin(), formarSlide()">
-
-  <!-- navbar inicio -->
-  <header>
-    <nav>
+ <!-- navbar inicio -->
+ <header>
+  <nav>
       <div class="logo">TNM Cars</div>
       <input type="checkbox" id="click">
       <label for="click" class="menu-btn">
-        <i class="fas fa-bars"></i>
+          <i class="fas fa-bars"></i>
       </label>
       <ul>
-        <li><a class="active" href="#">Home</a></li>
-        <li><a href="./carros/carros.html">Carros</a></li>
-        <li><a href="./CFsite/cfSite.html">Como funciona o site?</a></li>
-        <li id="perfil"><a href="./perfil/perfil.html">Perfil</a></li>
+          <li><a class="active" href="#">Home</a></li>
+          <li><a href="./carros/carros.html">Carros</a></li>
+          <li><a href="./pesquisa/pesquisa.html">Notícias</a></li>
+          <li id="perfil"><a href="./perfil/perfil.html" style="margin-left: 5px;">Perfil</a></li>
       </ul>
-    </nav>
-  </header>
-  <!-- navbar fim -->
+  </nav>
+</header>
+<!-- navbar fim -->
 
   <!-- main inicio -->
   <main>
     <h1 align="center" style="color: white; margin:3vh;">Encontre seu veículo aqui</h1>
     <div id="formulario">
       <select id="form_cambio">
-        <option selected>Câmbio</option>
+        <option selected value="Todos">Câmbio</option>
         <option value="automatico">Automático</option>
         <option value="manual">Manual</option>
       </select>
       <select id="form_modelo">
-        <option selected>Modelo</option>
+        <option selected value="Todos">Modelo</option>
         <option value="hatch">Hatch</option>
         <option value="sedan">Sedan</option>
         <option value="picape">Picape</option>
         <option value="suv">SUV</option>
-        <option value="todos">Todos</option>
+        <option value="Todos">Todos</option>
       </select>
       <br>
-      <select id="form_gasto">
-        <option selected>Gasto combustível</option>
-        <option value="baixo">Baixo</option>
-        <option value="medio">Médio</option>
-        <option value="alto">Alto</option>
-        <option value="todos">Todos</option>
+      <select id="form_ano_minimo">
+        <option selected value="Todos">Ano mínimo</option>
+        <option value="1980">De 1980</option>
+        <option value="1981">De 1981</option>
+        <option value="1982">De 1982</option>
+        <option value="1983">De 1983</option>
+        <option value="1984">De 1984</option>
+        <option value="1985">De 1985</option>
+        <option value="1986">De 1986</option>
+        <option value="1987">De 1987</option>
+        <option value="1988">De 1988</option>
+        <option value="1989">De 1989</option>
+        <option value="1990">De 1990</option>
+        <option value="1991">De 1991</option>
+        <option value="1993">De 1992</option>
+        <option value="1994">De 1994</option>
+        <option value="1995">De 1995</option>
+        <option value="1996">De 1996</option>
+        <option value="1997">De 1997</option>
+        <option value="1998">De 1998</option>
+        <option value="1999">De 1999</option>
+        <option value="2000">De 2000</option>
+        <option value="2001">De 2001</option>
+        <option value="2002">De 2002</option>
+        <option value="2003">De 2003</option>
+        <option value="2004">De 2004</option>
+        <option value="2005">De 2005</option>
+        <option value="2006">De 2006</option>
+        <option value="2007">De 2007</option>
+        <option value="2008">De 2008</option>
+        <option value="2009">De 2009</option>
+        <option value="2010">De 2010</option>
+        <option value="2011">De 2011</option>
+        <option value="2012">De 2012</option>
+        <option value="2013">De 2013</option>
+        <option value="2014">De 2014</option>
+        <option value="2015">De 2015</option>
+        <option value="2016">De 2016</option>
+        <option value="2017">De 2017</option>
+        <option value="2018">De 2018</option>
+        <option value="2019">De 2019</option>
+        <option value="2020">De 2020</option>
+        <option value="2021">De 2021</option>
+        <option value="2022">De 2022</option>
+        <option value="2023">De 2023</option>
       </select>
-      <select id="form_quant">
-        <option selected>Quantidade de parcelas</option>
-        <option value="36">12 parcelas - 36 parcelas</option>
-        <option value="80">48 parcelas - 72 parcelas</option>
+      <select id="form_ano_maximo">
+        <option selected value="Todos">Ano máximo</option>
+        <option value="1980">Até 1980</option>
+        <option value="1981">Até 1981</option>
+        <option value="1982">Até 1982</option>
+        <option value="1983">Até 1983</option>
+        <option value="1984">Até 1984</option>
+        <option value="1985">Até 1985</option>
+        <option value="1986">Até 1986</option>
+        <option value="1987">Até 1987</option>
+        <option value="1988">Até 1988</option>
+        <option value="1989">Até 1989</option>
+        <option value="1990">Até 1990</option>
+        <option value="1991">Até 1991</option>
+        <option value="1993">Até 1992</option>
+        <option value="1994">Até 1994</option>
+        <option value="1995">Até 1995</option>
+        <option value="1996">Até 1996</option>
+        <option value="1997">Até 1997</option>
+        <option value="1998">Até 1998</option>
+        <option value="1999">Até 1999</option>
+        <option value="2000">Até 2000</option>
+        <option value="2001">Até 2001</option>
+        <option value="2002">Até 2002</option>
+        <option value="2003">Até 2003</option>
+        <option value="2004">Até 2004</option>
+        <option value="2005">Até 2005</option>
+        <option value="2006">Até 2006</option>
+        <option value="2007">Até 2007</option>
+        <option value="2008">Até 2008</option>
+        <option value="2009">Até 2009</option>
+        <option value="2010">Até 2010</option>
+        <option value="2011">Até 2011</option>
+        <option value="2012">Até 2012</option>
+        <option value="2013">Até 2013</option>
+        <option value="2014">Até 2014</option>
+        <option value="2015">Até 2015</option>
+        <option value="2016">Até 2016</option>
+        <option value="2017">Até 2017</option>
+        <option value="2018">Até 2018</option>
+        <option value="2019">Até 2019</option>
+        <option value="2020">Até 2020</option>
+        <option value="2021">Até 2021</option>
+        <option value="2022">Até 2022</option>
+        <option value="2023">Até 2023</option>
       </select>
-      <select id="form_parcelas_min">
-        <option selected>Preço mínimo da parcela</option>
-        <option value="500">120R$</option>
-        <option value="700">300R$</option>
-        <option value="1000">500R$</option>
+      <select id="form_preco_min">
+        <option selected value="Todos">Preço mínimo</option>
+        <option value="4000">De R$ 4 Mil</option>
+        <option value="6000">De R$ 6 Mil</option>
+        <option value="8000">De R$ 8 Mil</option>
+        <option value="10000">De R$ 10 Mil</option>
+        <option value="12000">De R$ 12 Mil</option>
+        <option value="16000">De R$ 16 Mil</option>
+        <option value="18000">De R$ 18 Mil</option>
+        <option value="20000">De R$ 20 Mil</option>
+        <option value="22000">De R$ 22 Mil</option>
+        <option value="24000">De R$ 24 Mil</option>
+        <option value="26000">De R$ 26 Mil</option>
+        <option value="28000">De R$ 28 Mil</option>
+        <option value="30000">De R$ 30 Mil</option>
+        <option value="35000">De R$ 35 Mil</option>
+        <option value="40000">De R$ 40 Mil</option>
+        <option value="45000">De R$ 45 Mil</option>
+        <option value="50000">De R$ 50 Mil</option>
+        <option value="60000">De R$ 60 Mil</option>
+        <option value="70000">De R$ 70 Mil</option>
+        <option value="80000">De R$ 80 Mil</option>
+        <option value="90000">De R$ 90 Mil</option>
+        <option value="100000">De R$ 100 Mil</option>
+        <option value="120000">De R$ 120 Mil</option>
+        <option value="150000">De R$ 150 Mil</option>
+        <option value="200000">De R$ 200 Mil</option>
+
       </select>
-      <select id="form_parcelas">
-        <option selected>Preço máximo da parcela</option>
-        <option value="700">700R$</option>
-        <option value="900">900R$</option>
-        <option value="1300">1300R$</option>
+      <select id="form_preco_max">
+        <option selected value="Todos">Preço máximo</option>
+        <option value="4000">Até R$ 4 Mil</option>
+        <option value="6000">Até R$ 6 Mil</option>
+        <option value="8000">Até R$ 8 Mil</option>
+        <option value="10000">Até R$ 10 Mil</option>
+        <option value="12000">Até R$ 12 Mil</option>
+        <option value="16000">Até R$ 16 Mil</option>
+        <option value="18000">Até R$ 18 Mil</option>
+        <option value="20000">Até R$ 20 Mil</option>
+        <option value="22000">Até R$ 22 Mil</option>
+        <option value="24000">Até R$ 24 Mil</option>
+        <option value="26000">Até R$ 26 Mil</option>
+        <option value="28000">Até R$ 28 Mil</option>
+        <option value="30000">Até R$ 30 Mil</option>
+        <option value="35000">Até R$ 35 Mil</option>
+        <option value="40000">Até R$ 40 Mil</option>
+        <option value="45000">Até R$ 45 Mil</option>
+        <option value="50000">Até R$ 50 Mil</option>
+        <option value="60000">Até R$ 60 Mil</option>
+        <option value="70000">Até R$ 70 Mil</option>
+        <option value="80000">Até R$ 80 Mil</option>
+        <option value="90000">Até R$ 90 Mil</option>
+        <option value="100000">Até R$ 100 Mil</option>
+        <option value="120000">Até R$ 120 Mil</option>
+        <option value="150000">Até R$ 150 Mil</option>
+        <option value="200000">Até R$ 200 Mil</option>
       </select>
       <button id="btn_buscar">Buscar</button>
     </div>
@@ -90,41 +217,34 @@
     <!-- teste carrosel -->
     <h1 align="center" style="color: white; margin: 20px;">Carros mais pesquisados</h1>
 
-    <div class="slider" id="carrossels">
+    <div class="slider carrossel" >
       
     <div class="slide active">
-      <img src="https://cdn.motor1.com/images/mgl/2oWBK/s1/honda-civic-exl-2020.jpg" alt="">
+      <img src="https://cdn.discordapp.com/attachments/979165408181493763/1047672872828686386/palio.jpg" alt="">
       <div class="info">
-        <h2>1.0 12v gol 1.0 12v</h2>
-        <p>Descrição teste</p>
+        <h2> Fiat Palio 1.6 MPI STILE WEEKEND 16V GASOLINA 4P MANUAL</h2>
+        <h3 align="center">R$24.900,00</h3>
       </div>
     </div>
     <div class="slide">
-      <img src="https://cdn.discordapp.com/attachments/1006581085427220551/1037604705699905546/carro2.jpg" alt="">
+      <img src="https://cdn.discordapp.com/attachments/979165408181493763/1047700128569499678/gol.jpg" alt="">
       <div class="info">
-        <h2>1.5 kwid 1.5</h2>
-        <p>Descrição teste</p>
+        <h2>Volkswagen Gol 1.6 MSI TOTALFLEX 4P MANUAL</h2>
+        <h3 align="center">R$68.900,00</h3>
       </div>
     </div>
     <div class="slide">
-      <img src="https://cdn.discordapp.com/attachments/1006581085427220551/1037604706672971776/carro4.jpg" alt="">
+      <img src="https://cdn.discordapp.com/attachments/979165408181493763/1047700592048480256/onix.jpg" alt="">
       <div class="info">
-        <h2>5.0 argo 5.0</h2>
-        <p>Descrição teste</p>
+        <h2>Chevrolet Onix 1.0 TURBO FLEX LTZ AUTOMÁTICO</h2>
+        <h3 align="center">R$84.900,00</h3>
       </div>
     </div>
     <div class="slide">
-      <img src="https://cdn.discordapp.com/attachments/1006581085427220551/1037604706979151902/carro5.jpg" alt="">
+      <img src="https://cdn.discordapp.com/attachments/979165408181493763/1047700748424712302/kwid.jpg" alt="">
       <div class="info">
-        <h2>2.0 fiesta 2.0</h2>
-        <p>Descrição teste</p>
-      </div>
-    </div>
-    <div class="slide">
-      <img src="https://cdn.discordapp.com/attachments/1006581085427220551/1037604706979151902/carro5.jpg" alt="">
-      <div class="info">
-        <h2>2.0 fiesta 2.0</h2>
-        <p>Descrição teste</p>
+        <h2>Renault Kwid 1.0 12V SCE FLEX INTENSE MANUAL</h2>
+        <h3 align="center">R$ 53.900,00</h3>
       </div>
     </div>
     <div class="navigation">
@@ -136,7 +256,6 @@
       <div class="slide-icon"></div>
       <div class="slide-icon"></div>
       <div class="slide-icon"></div>
-      <div class="slide-icon"></div>
     </div>
     
 </div>
@@ -144,6 +263,53 @@
 
 
     <!-- fim teste -->
+
+    <!-- carrossel noticias -->
+
+    <h1 align="center" style="color: white; margin: 20px;">Carros mais pesquisados</h1>
+
+    <div class="slider carrossel" >
+      
+    <div class="slide active">
+      <img src="https://cdn.discordapp.com/attachments/979165408181493763/1047672872828686386/palio.jpg" alt="">
+      <div class="info">
+        <h2> Fiat Palio 1.6 MPI STILE WEEKEND 16V GASOLINA 4P MANUAL</h2>
+        <h3 align="center">R$24.900,00</h3>
+      </div>
+    </div>
+    <div class="slide">
+      <img src="https://cdn.discordapp.com/attachments/979165408181493763/1047700128569499678/gol.jpg" alt="">
+      <div class="info">
+        <h2>Volkswagen Gol 1.6 MSI TOTALFLEX 4P MANUAL</h2>
+        <h3 align="center">R$68.900,00</h3>
+      </div>
+    </div>
+    <div class="slide">
+      <img src="https://cdn.discordapp.com/attachments/979165408181493763/1047700592048480256/onix.jpg" alt="">
+      <div class="info">
+        <h2>Chevrolet Onix 1.0 TURBO FLEX LTZ AUTOMÁTICO</h2>
+        <h3 align="center">R$84.900,00</h3>
+      </div>
+    </div>
+    <div class="slide">
+      <img src="https://cdn.discordapp.com/attachments/979165408181493763/1047700748424712302/kwid.jpg" alt="">
+      <div class="info">
+        <h2>Renault Kwid 1.0 12V SCE FLEX INTENSE MANUAL</h2>
+        <h3 align="center">R$ 53.900,00</h3>
+      </div>
+    </div>
+    <div class="navigation">
+      <i class="fas fa-chevron-left prev-btn"></i>
+      <i class="fas fa-chevron-right next-btn"></i>
+    </div>
+    <div class="navigation-visibility">
+      <div class="slide-icon active"></div>
+      <div class="slide-icon"></div>
+      <div class="slide-icon"></div>
+      <div class="slide-icon"></div>
+    </div>
+    
+</div>
 
   </main>
 
@@ -191,6 +357,7 @@
   <!-- fim footer -->
 
 
+<!-- JavaScript Bundle with Popper -->
 
 </body>
 

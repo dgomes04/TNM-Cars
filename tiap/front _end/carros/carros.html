@@ -11,158 +11,136 @@
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <link rel="stylesheet" href="carros.css">
-    
+
     <title>Carros</title>
 
 
 </head>
+<!-- onload= -->
 
-<body id="body" onload="montaCardPesquisa()">
-    <header>
-        <nav>
-            <div class="logo">TNM Cars</div>
-            <input type="checkbox" id="click">
-            <label for="click" class="menu-btn">
-                <i class="fas fa-bars"></i>
-            </label>
-            <ul>
-                <li><a class="active" href="../index.html" onclick="resetarForm()">Home</a></li>
-                <li><a href="../carros/carros.html" onclick="resetarForm()">Carros</a></li>
-                <li><a href="../CFsite/cfSite.html" onclick="resetarForm()">Como funciona o site?</a></li>
-                <li id="perfil"><a href="../perfil/perfil.html" onclick="resetarForm()">Perfil</a></li>
-            </ul>
-        </nav>
-    </header>
+<body id="body" onload="montaCardPesquisa(), verificar_favoritos()"></body>
+<header>
+    <nav>
+        
+        <div class="logo">TNM Cars</div>
+        <input type="checkbox" id="click" style="display: none;">
+        <label for="click" class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+            <li><a class="active" href="../index.html" onclick="resetarForm()">Home</a></li>
+            <li><a href="../carros/carros.html" onclick="resetarForm()">Carros</a></li>
+            <li><a href="../pesquisa/pesquisa.html" onclick="resetarForm()">Notícias</a></li>
+            <li id="perfil"><a href="../perfil/perfil.html" onclick="resetarForm()">Perfil</a></li>
+        </ul>
+    </nav>
+</header>
 
 
-    <main>
+<main>
+    <div class="titulo-site">
+        <h1>Quantidade de carros (22.000)</h1>
+    </div>
+    <div class="principal">
+        <div class="filtros">
+           
 
-        <ul id="carrosDivv">
-            <li >
-                <div class="conteudo-principal">
-                    <div class="quadrado-de-cima">
-                        <div class="quadrado-do-titulo">
-                            <input id="id"value="3" hidden>
-                            <h2>titulo</h2>
-                        </div>
-                        <div class="quadrado-do-preco">
-                            <h3 >R$ 25000,00</h3>
-                        </div>
-                    </div>
-                    <div class="quadrado-conteudo-principal">
-                        <div class="carro">
-                            <img src="../images/carro1.jpg" width="100%" height="100%"alt="">
-                        </div>
-                        <div class="descricao">
-                            <div class="detalhe">
-                                <div class="ano">
-                                    <p style="font-size: larger;">Ano</p>
-                                    <p>2009</p>
-                                </div>
-                                <div class="km">
-                                    
-                                    <p style="padding-top: 10px;">0KM</p>
-                                </div>
-                                <div class="cambio">
-                                    <h3>cambio</h3>
+              
+            <div class="marcacoes">
+                <select name="marca" class="marcaV" id="dropdown">
+                    <option selected value="Todos">Marca</option>
+                    <option value="fiat">Fiat</option>
+                    <option value="volksvagem">Volksvagem</option>
+                    <option value="renault">Renault</option>
+                    <option value="chevrolett">Chevrolet</option>
+                    <option value="hyundai">Hyundai</option>
+                    <option value="peugeot">Peugeot</option>
+                    <option value="ford">Ford</option>
+                    <option value="mercedes">Mercedes</option>
+                </select>
+                <select name="carroceria"class="carroceriaV" id="dropdown">
+                    <option selected value="Todos">Carroceria</option>
+                    <option value="hatch">Hatch</option>
+                    <option value="sedan">Sedan</option>
+                    <option value="picape">Picape</option>
+                    <option value="suv">SUV</option> 
+                    <option value="todos">todos</option>      
+                </select>
+                <select name="cambio" class="cambioV" id="dropdown">
+                    <option selected value="Todos">Câmbio</option>
+                    <option value="automatico">Automático</option>
+                    <option value="manual">Manual</option>    
+                </select>
+                <select name="marca" class="estadoV" id="dropdown">
+                    <option selected value="Todos">Estado</option>
+                    <option value="novo">0 KM</option>
+                    <option value="usado">Usado</option>
+                </select>
+            </div>
+            <div class="buscar">
+                <button class="btn_pesquisar" onclick="filtrar()">Pesquisar</button>
+            </div>
+        </div>
+        <ul id="carrosDiv">
 
-                                    <p>automatico</p>
-                                </div>
-                            </div>
-                            <div class="mais-detalhe">
-                                <h2 style="font-weight:300; padding-top:10px;">descricao grande: Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus molestias odit autem dolores</h2>
-                            </div>
-                            
-                        </div>
-                        <div class="logo-carros">
-                            <img src="../images/mitsubish.jpg" class="logo-marca"alt="" align="center">
-                            <h2 style="text-align: center;">Oferta Mitsubishi</h2>
-                            <img src="../images/icons8-estrela-de-natal-32.png" alt="favoritar" class="favoritar" onclick="favoritar()">
-                        </div>
-                    </div>
-                </div>
-            </li>
-            
         </ul>
 
+    </div>
 
-        <!-- <section id="products">
-            <div class="container">
-                <div class="row">
 
-                    <div class="row" id="carrosDiv">
 
-                    </div>
+</main>
 
-                </div>
+
+<!-- teste -->
+
+
+
+<footer>
+    <div class="content-footer">
+        <div class="left box">
+            <div class="upper">
+                <div class="topic">Sobre nós</div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, voluptatem, porro dolorum harum
+                    tempore nemo excepturi velit minus reiciendis quae esse vero asperiores odio incidunt.</p>
             </div>
-        </section>
-        <section id="products">
-            <div class="container">
-                <div class="row">
-
-                    <div class="row mt-3" id="carrosDiv2">
-
-                    </div>
-
+            <div class="lower">
+                <div class="topic">Contato</div>
+                <div class="phone">
+                    <a href="#"><i class="fas fa-phone-volume"></i>+007 9089 6767</a>
                 </div>
-            </div>
-
-        </section> -->
-
-
-    </main>
-
-
-    <!-- teste -->
-
-
-
-    <footer>
-        <div class="content-footer">
-            <div class="left box">
-                <div class="upper">
-                    <div class="topic">Sobre nós</div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, voluptatem, porro dolorum harum
-                        tempore nemo excepturi velit minus reiciendis quae esse vero asperiores odio incidunt.</p>
+                <div class="email">
+                    <a href="#"><i class="fas fa-envelope"></i>tnmContato@gmail.com</a>
                 </div>
-                <div class="lower">
-                    <div class="topic">Contato</div>
-                    <div class="phone">
-                        <a href="#"><i class="fas fa-phone-volume"></i>+007 9089 6767</a>
-                    </div>
-                    <div class="email">
-                        <a href="#"><i class="fas fa-envelope"></i>tnmContato@gmail.com</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="right box">
-                <div class="topic">Inscreva-se para receber novidades</div>
-                <form action="#">
-                    <input type="text" name="email" id="email" placeholder="Digite seu email">
-                    <input type="submit" name="email" id="inscrever" value="Inscrever">
-                    <div class="media-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </form>
             </div>
         </div>
-        <div class="bottom">
-            <p>Copyright © 2022 <a href="#">TNM Cars</a> Todos os direitos reservados</p>
+
+        <div class="right box">
+            <div class="topic">Inscreva-se para receber novidades</div>
+            <form action="#">
+                <input type="text" name="email" id="email" placeholder="Digite seu email">
+                <input type="submit" name="email" id="inscrever" value="Inscrever">
+                <div class="media-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </form>
         </div>
-    </footer>
+    </div>
+    <div class="bottom">
+        <p>Copyright © 2022 <a href="#">TNM Cars</a> Todos os direitos reservados</p>
+    </div>
+</footer>
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
-    <script src="carros.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+<script src="carros.js"></script>
 </body>
 
 </html>

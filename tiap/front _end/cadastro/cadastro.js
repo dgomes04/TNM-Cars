@@ -38,7 +38,7 @@ function cadastrar() {
             confirmacaoDeSenha: confirmacao
         }
     
-        respostas = []
+        
         fetch('http://localhost:3456/users', {
             method: 'POST',
             body: JSON.stringify(registrate),            

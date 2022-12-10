@@ -20,21 +20,24 @@ function entrar() {
     }).then(dados => {
         erro = dados.error;
        
-       
         if(erro == undefined){
             token = dados.token;
             localStorage.setItem('token', token);
-           
-            dadosUser[0] = dados.nome;
-            dadosUser[1] = dados.email; 
-            dadosUser[2] = dados.usuario;
-            dadosUser[3] = dados.telefone
             
-            localStorage.setItem('dados',dadosUser)
+            const dadosUser = {
+                nome: dados.nome,
+                email: dados.email,
+                usuario: dados.usuario,
+                telefone: dados.telefone,
+                id: dados.id
+            }
             
+            localStorage.setItem('dados',JSON.stringify(dadosUser))   
             window.location.assign('../index.html')
+            
         }else{
             alert(erro)
+            
         }
     })
 

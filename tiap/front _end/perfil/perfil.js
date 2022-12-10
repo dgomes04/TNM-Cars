@@ -1,6 +1,6 @@
 const mudaPag = document.querySelector('#margemLog');
 let preToken;
-let dadosUser = [];
+
 
 function verLogin() {
     let user = JSON.parse(localStorage.getItem('usuario'));
@@ -44,17 +44,13 @@ const deletaDados = () => {
 function verficaDados() {
 
 
-    let user = localStorage.getItem('dados');
-    let string = '';
-    for (let i = 0; i < user.length; i++)
-        string += user[i];
-    let vet = string.split(',')
+    let dadosUser = JSON.parse(localStorage.getItem('dados'));
 
 
-    document.getElementById('nomePerfil').innerHTML = `Nome <p style="padding-top:5px;">${vet[0]}</p>  `;
-    document.getElementById("email").innerHTML = vet[1];
-    document.getElementById('usuario').innerHTML = vet[2];
-    document.getElementById("telefone").innerHTML = vet[3];
+    document.getElementById('nomePerfil').innerHTML = `Nome <p style="padding-top:5px;">${dadosUser.nome}</p>  `;
+    document.getElementById("email").innerHTML = dadosUser.email;
+    document.getElementById('usuario').innerHTML = dadosUser.usuario;
+    document.getElementById("telefone").innerHTML = dadosUser.telefone;
 }
 
 function deslogar() {
@@ -74,16 +70,12 @@ const trocarSenha = () => {
 
 
     if (confirm('Tem certeza?') == true) {
-        let user = localStorage.getItem('dados');
-        let string = '';
-        for (let i = 0; i < user.length; i++)
-            string += user[i];
-        let vet = string.split(',')
+        let dadosUser = JSON.parse(localStorage.getItem('dados'));
 
         let confirmaSenha = prompt('Digite sua senha antiga: ')
 
         const dadosConfirmacao = {
-            email: vet[1],
+            email: dadosUser.email,
             senha: confirmaSenha
         }
 
@@ -109,10 +101,10 @@ const trocarSenha = () => {
                 let confirmaNovaSenha = prompt("Confirme a senha: ")
                 if (novaSenha === confirmaNovaSenha) {
                     const dadosTroca = {
-                        nome: vet[0],
-                        email: vet[1],
-                        telefone: vet[3],
-                        usuario: vet[2],
+                        nome: dadosUser.nome,
+                        email: dadosUser.nome,
+                        telefone:dadosUser.telefone,
+                        usuario: dadosUser.usuario,
                         senha: novaSenha
                     }
 
@@ -132,11 +124,14 @@ const trocarSenha = () => {
                         console.log(dados)
                         localStorage.setItem('token', token);
 
-                        dadosUser[0] = dados.nome;
-                        dadosUser[1] = dados.email;
-                        dadosUser[2] = dados.usuario;
-                        dadosUser[3] = dados.telefone
-                        localStorage.setItem('dados', dadosUser)
+                        const dadosNovos = {
+                            nome: dados.nome,
+                            email: dados.email,
+                            usuario: dados.usuario,
+                            telefone: dados.telefone,
+                            id: dados.id
+                        }
+                        localStorage.setItem('dados', JSON.stringify(dadosNovos))
                         deslogar()
                     })
 
@@ -154,16 +149,13 @@ const trocarEmail = () => {
 
 
     if (confirm('Tem certeza?') == true) {
-        let user = localStorage.getItem('dados');
-        let string = '';
-        for (let i = 0; i < user.length; i++)
-            string += user[i];
-        let vet = string.split(',')
+        let dadosUser = JSON.parse(localStorage.getItem('dados'));
+        
 
         let confirmaSenha = prompt('Digite sua senha: ')
 
         const dadosConfirmacao = {
-            email: vet[1],
+            email: dadosUser.email,
             senha: confirmaSenha
         }
 
@@ -187,10 +179,10 @@ const trocarEmail = () => {
 
                 let novoEmail = prompt("Digite seu novo Email: ")
                 const dadosTroca = {
-                    nome: vet[0],
+                    nome: dadosUser.nome,
                     email: novoEmail,
-                    telefone: vet[3],
-                    usuario: vet[2],
+                    telefone: dadosUser.telefone,
+                    usuario: dadosUser.usuario,
                     senha: confirmaSenha
                 }
 
@@ -210,11 +202,14 @@ const trocarEmail = () => {
                     console.log(dados)
                     localStorage.setItem('token', token);
 
-                    dadosUser[0] = dados.nome;
-                    dadosUser[1] = dados.email;
-                    dadosUser[2] = dados.usuario;
-                    dadosUser[3] = dados.telefone
-                    localStorage.setItem('dados', dadosUser)
+                    const dadosNovos = {
+                        nome: dados.nome,
+                        email: dados.email,
+                        usuario: dados.usuario,
+                        telefone: dados.telefone,
+                        id: dados.id
+                    }
+                    localStorage.setItem('dados', dadosNovos)
 
                     deslogar()
                 })
@@ -231,16 +226,12 @@ const trocarEmail = () => {
 const trocarUsuario = () =>{
 
     if (confirm('Tem certeza?') == true) {
-        let user = localStorage.getItem('dados');
-        let string = '';
-        for (let i = 0; i < user.length; i++)
-            string += user[i];
-        let vet = string.split(',')
-
+        let dadosUser = JSON.parse(localStorage.getItem('dados'));
+    
         let confirmaSenha = prompt('Digite sua senha: ')
 
         const dadosConfirmacao = {
-            email: vet[1],
+            email: dadosUser.email,
             senha: confirmaSenha
         }
 
@@ -264,9 +255,9 @@ const trocarUsuario = () =>{
 
                 let novoUsuario = prompt("Digite seu novo usuário: ")
                 const dadosTroca = {
-                    nome: vet[0],
-                    email: vet[1],
-                    telefone: vet[3],
+                    nome: dadosUser.nome,
+                    email: dadosUser.email,
+                    telefone: dadosUser.telefone,
                     usuario: novoUsuario,
                     senha: confirmaSenha
                 }
@@ -287,11 +278,14 @@ const trocarUsuario = () =>{
                     console.log(dados)
                     localStorage.setItem('token', token);
 
-                    dadosUser[0] = dados.nome;
-                    dadosUser[1] = dados.email;
-                    dadosUser[2] = dados.usuario;
-                    dadosUser[3] = dados.telefone
-                    localStorage.setItem('dados', dadosUser)
+                    const dadosNovos = {
+                        nome: dados.nome,
+                        email: dados.email,
+                        usuario: dados.usuario,
+                        telefone: dados.telefone,
+                        id: dados.id
+                    }
+                    localStorage.setItem('dados', JSON.stringify(dadosNovos))
 
                     deslogar()
                 })
@@ -307,16 +301,12 @@ const trocarUsuario = () =>{
 const trocaTelefone = () =>{
 
     if (confirm('Tem certeza?') == true) {
-        let user = localStorage.getItem('dados');
-        let string = '';
-        for (let i = 0; i < user.length; i++)
-            string += user[i];
-        let vet = string.split(',')
+        let dadosUser = JSON.parse(localStorage.getItem('dados'));
 
         let confirmaSenha = prompt('Digite sua senha: ')
 
         const dadosConfirmacao = {
-            email: vet[1],
+            email: dadosUser,
             senha: confirmaSenha
         }
 
@@ -340,10 +330,10 @@ const trocaTelefone = () =>{
 
                 let novoTelefone = prompt("Digite seu novo número de telefone: ")
                 const dadosTroca = {
-                    nome: vet[0],
-                    email: vet[1],
+                    nome: dadosUser.nome,
+                    email: dadosUser.email,
                     telefone: novoTelefone,
-                    usuario: vet[2],
+                    usuario: dadosUser.usuario,
                     senha: confirmaSenha
                 }
 
@@ -363,11 +353,14 @@ const trocaTelefone = () =>{
                     console.log(dados)
                     localStorage.setItem('token', token);
 
-                    dadosUser[0] = dados.nome;
-                    dadosUser[1] = dados.email;
-                    dadosUser[2] = dados.usuario;
-                    dadosUser[3] = dados.telefone
-                    localStorage.setItem('dados', dadosUser)
+                    const dadosNovos = {
+                        nome: dados.nome,
+                        email: dados.email,
+                        usuario: dados.usuario,
+                        telefone: dados.telefone,
+                        id: dados.id
+                    }
+                    localStorage.setItem('dados', JSON.stringify(dadosNovos))
 
                     deslogar()
                 })

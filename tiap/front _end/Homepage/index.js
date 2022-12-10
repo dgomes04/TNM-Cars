@@ -16,7 +16,7 @@ const deslogar = () => {
 }
 
 const montarCarrossel = () =>{
-    
+    let token = localStorage.getItem('token')
     const respostas2 = {
         valorParcela: 1300,
         qtdParcelas: 80,
@@ -38,7 +38,7 @@ const montarCarrossel = () =>{
         return dados.json()
     }).then(dados => {
         erro = dados.error;
-
+        
 
         if (erro == undefined) {
             console.log(dados)
@@ -55,6 +55,6 @@ const montarCarrossel = () =>{
     })
 }
 
-document.onload(montarCarrossel());
+
 
   

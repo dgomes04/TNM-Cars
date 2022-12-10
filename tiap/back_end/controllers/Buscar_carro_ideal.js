@@ -1,70 +1,88 @@
-
+const { query } = require('express')
 const connection = require('../connection')
 
 module.exports = async (request, response) => {
     const data = request.body
 
-    const validators = {
-        valorParcela: 'O valor da parcela é obrigatório',
-        qtdParcelas: 'A quantidade de parcelas é obrigatória',
-        porcentagem: 'A porcentagem é obrigatória',
-        cambio: 'O câmbio é obrigatório',
-        custoCombutivel: 'O custo de combustível é obrigatório',
-        estilo: 'O estilo é obrigatório'
-    }
+    if (data.cambio && data.estilo && data.anoMaximo && data.anoMinimo && data.precoMaximo && data.precoMinimo) {
+        let querySelect = `select * from carros `
+        let comando = 'where'
 
-    for (const [key, value] of Object.entries(validators)) {
-        if (!data[key]) {
-            return response.status(400).json({ error: value })
-        }
-    }
-    console.log(data)
-    const valorParcela = Number.parseFloat(data.valorParcela.split(',').join('.'))
-    const totalCarro = Number.parseFloat(valorParcela * data.qtdParcelas)
-    const porcentagem = (data.porcentagem * totalCarro / 100)
-    const valorCarroMaisPorcentagem = totalCarro + porcentagem
-    const valorCarroMenosPorcentagem = (totalCarro - porcentagem)
-    const cambio = data.cambio
-    const consumo = data.custoCombutivel
-
-    const estilosPermitidos = {
-        hatch: `estilo = 'hatch'`,
-        sedan: `estilo = 'sedan'`,
-        suv: `estilo = 'suv'`,
-        picape: `estilo = 'picape'`,
-        todos: `(estilo = 'hatch' or estilo = 'sedan' or estilo = 'suv' or estilo = 'picape')`
-    }
-
-    let select = `SELECT * FROM carros where ${estilosPermitidos[data.estilo]}`
-
-    if (data.custoCombutivel === 'todos') {
-        select += ` and (consumo = 'baixo' or consumo = 'medio' or consumo = 'alto')`
-    } else {
-        select += ` and consumo = '${consumo}'`
-    }
-
-
-    if (data.cambio === 'todos') {
-        select += ` and (cambio = 'manual' or cambio = 'automatico')`
-    } else {
-        select += ` and cambio = '${cambio}'`
-    }
-
-    select += ` and valor BETWEEN ${valorCarroMenosPorcentagem} AND ${valorCarroMaisPorcentagem} `
-
-    const carros = await connection.awaitQuery(select);
-   
-    for (const {id} of carros) {
-
-        const existeCarro =  await connection.awaitQuery(`select * from carros_populares where idcarro = ${id}`)
-        if (existeCarro[0]) {
-            const voto = existeCarro[0].votos +1
-            await connection.awaitQuery(`update carros_populares set votos = ${voto} where idcarro = ${id}`) 
+        if (data.cambio == 'Todos') {
+            querySelect += ``
         } else {
-            await connection.awaitQuery(`INSERT INTO carros_populares (idcarro, votos) values (?,?)`, [id, 1])
+            querySelect += `where cambio = '${data.cambio}' `
         }
+        if (querySelect != 'select * from carros ') {
+            comando = 'where'
+        }
+        
+        if (data.estilo == 'Todos') {
+            querySelect += ``
+        } else {
+            querySelect += `${comando} estilo = '${data.estilo}' `
+        }
+
+        if (data.anoMinimo == 'Todos' && data.anoMaximo == 'Todos') {
+            querySelect += ``
+        }
+        
+
+        if (querySelect != 'select * from carros') {
+            comando = 'and'
+        }
+
+        if (data.anoMinimo == 'Todos' && data.anoMaximo != 'Todos') {
+            querySelect += `${comando} ano between 1500 and ${data.anoMaximo} `
+        }
+
+        if (data.anoMaximo == 'Todos' && data.anoMinimo != 'Todos') {
+            querySelect += `${comando} ano between ${data.anoMinimo} and 3000 `
+        }
+
+        if (querySelect == 'select * from carros ') {
+            comando = 'where'
+        }
+
+        if (data.anoMaximo != 'Todos' && data.anoMinimo != 'Todos') {
+            querySelect += `${comando} ano between ${data.anoMinimo} and ${data.anoMaximo} `
+        }
+        
+        if (querySelect != 'select * from carros ') {
+            comando = 'and'
+        }
+
+        if (data.precoMinimo == 'Todos' && data.precoMaximo == 'Todos') {
+            querySelect += ``
+        }
+        if (data.precoMinimo == 'Todos' && data.precoMaximo != 'Todos') {
+            querySelect += `${comando} valor between 1500 and ${data.precoMaximo} `
+        }
+
+        if (data.precoMaximo == 'Todos' && data.precoMinimo != 'Todos') {
+            querySelect += `${comando} valor between ${data.precoMinimo} and 900000 `
+        }
+       
+        if (data.precoMaximo != 'Todos' && data.precoMinimo != 'Todos') {
+            querySelect += `${comando} valor between ${data.precoMinimo} and ${data.precoMaximo} `
+        }
+        
+        const carros = await connection.awaitQuery(querySelect);
+        
+        for (const { id } of carros) {
+
+            const existeCarro = await connection.awaitQuery(`select * from carros_populares where idcarro = ${id}`)
+            if (existeCarro[0]) {
+                const voto = existeCarro[0].votos + 1
+                await connection.awaitQuery(`update carros_populares set votos = ${voto} where idcarro = ${id}`)
+            } else {
+                await connection.awaitQuery(`INSERT INTO carros_populares (idcarro, votos) values (?,?)`, [id, 1])
+            }
+        }
+
+        return response.json(carros)
     }
-    response.json(carros)
-   
+
+
 
 }

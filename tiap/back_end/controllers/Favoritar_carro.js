@@ -12,7 +12,7 @@ exports.favoritar = async (request, response) => {
     const query = 'INSERT INTO favoritos (idUser, idCarro) VALUES (?,?)'
 
     const insertedCarros = await connection.awaitQuery(query, [request.usuario.id, idCarro])
-
+    
     response.json(insertedCarros)
 
 }
