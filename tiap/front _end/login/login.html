@@ -1,58 +1,51 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TNM Cars</title>
-    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style-with-prefix.css">
-    <script src="login.js"></script>
-    <style>
-        .srouce {
-            text-align: center;
-            color: #ffffff;
-            padding: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="Assets/css/login.css">
+    <script src="Assets/js/login.js"></script>
 </head>
 
-
-
-
-<body> 
-
-    <div class="main-container">
-        <div class="form-container">
-
-            <div class="form-body">
-
-              
-                <h2 class="title">Login</h2>
-
-                <form action="#" onsubmit="return entrar()" class="the-form">
-
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="Entre com o seu e-mail">
-
-                    <label for="password">Senha</label>
-                    <input type="password" name="password" id="password" placeholder="Entre com a sua senha">
-
-                    <input type="submit" value="Entrar">
-
-                </form>
-
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-in-container">
+            <div id="form">
+                <h1 id="entrar">Entrar</h1>
+                <input type="text" placeholder="Usuário" id="email" />
+                <input type="password" placeholder="Senha" id="senha" />
+                
+                <button class="entrar" id="entrar"onclick="entrar()">Entrar</button>
             </div>
-
-            <div class="form-footer">
-                <div>
-                    <span>Não possui uma conta?</span> <a href="../cadastro/cadastro.html">Cadastre-se.</a>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-right">
+                    <!-- <img src="wallpaperPreto.png" id="foto"> -->
+                    <br>
+                    <br>
+                    <h4 >Informe seu usuário e senha para entrar na plataforma</h4>
+                    <br>
+                    <br>
                 </div>
             </div>
         </div>
     </div>
+    <div class="form-footer">
+        <div>
+            <span>Não possui uma conta?</span> <a href="../cadastro/cadastro.html">Cadastre-se.</a>
+        </div>
+    </div>
 
-   
+
+
+
 
 </body>
 

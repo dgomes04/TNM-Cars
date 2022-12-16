@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favoritos</title>
+
+    <link rel="stylesheet" href="./Assets/css/style.css">
+    <script src="./Assets/js/app.js" defer></script>
+    <!-- boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+</head>
+
+<body onload="verLogin(), monta_carros_favoritos()">
+    <!-- navbar inicio -->
+    <header>
+        <nav>
+            <div class="logo">TNM Cars</div>
+            <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../carros/carros.html">Carros</a></li>
+                <li id="favoritos"><a href="" hidden></a></li>
+                <li><a href="../pesquisa/pesquisa.html">Notícias</a></li>
+                <li id="perfil"><a href="../login/login.html">Logar</a> </li>
+
+            </ul>
+        </nav>
+    </header>
+    <!-- navbar fim -->
+    <main>
+        <div class="titulo-site">
+            <h1>Quantidade de carros (22.000)</h1>
+        </div>
+        <div class="principal">
+            <div class="filtros">
+               
+    
+                  
+                <div class="marcacoes">
+                    <select name="marca" class="marcaV" id="dropdown">
+                        <option selected value="Todos">Marca</option>
+                        <option value="fiat">Fiat</option>
+                        <option value="volkswagen">Volkswagen</option>
+                        <option value="renault">Renault</option>
+                        <option value="chevrolet">Chevrolet</option>
+                        <option value="hyundai">Hyundai</option>
+                        <option value="peugeot">Peugeot</option>
+                        <option value="ford">Ford</option>
+                        <option value="Toyota">Toyota</option>
+                        <option value="Nissan">Nissan</option>
+                        <option value="Honda">Honda</option>
+                        <option value="Kia">Kia</option>
+                        <option value="mercedes-benz">Mercedes</option>
+                    </select>
+                    <select name="carroceria"class="carroceriaV" id="dropdown">
+                        <option selected value="Todos">Carroceria</option>
+                        <option value="hatch">Hatch</option>
+                        <option value="sedan">Sedan</option>
+                        <option value="picape">Picape</option>
+                        <option value="suv">SUV</option> 
+                        <option value="van">Van</option> 
+                        <option value="todos">todos</option>      
+                    </select>
+                    <select name="cambio" class="cambioV" id="dropdown">
+                        <option selected value="Todos">Câmbio</option>
+                        <option value="automatico">Automático</option>
+                        <option value="manual">Manual</option>    
+                    </select>
+                    <select name="marca" class="estadoV" id="dropdown">
+                        <option selected value="Todos">Estado</option>
+                        <option value="novo">0 KM</option>
+                        <option value="usado">Usado</option>
+                    </select>
+                    <select name="marca" class="corV" id="dropdown">
+                        <option selected value="Todos">Cor</option>
+                        <option value="Branco">Branco</option>
+                        <option value="Preto">Preto</option>
+                        <option value="Cinza">Cinza</option>
+                    </select>
+                </div>
+                <div class="buscar">
+                    <button class="btn_pesquisar" onclick="filtrar()">Pesquisar</button>
+                </div>
+            </div>
+            <ul id="carrosDiv">
+    
+            </ul>
+            
+        </div>
+    </main>
+    
+    <!-- footer inicio -->
+    <footer>
+        <div class="content-footer">
+            <div class="left box">
+                <div class="upper">
+                    <div class="topic">Sobre nós</div>
+                    <p>Somos um portal de consulta de preços voltados ao mercado automotivo, em busca de fornecer ajuda a interessados em comprar do seu futuro automóvel. A razão da nossa existência é justamente ser o fator facilitador ao procurar de um veículo. Com nosso verdadeiro objetivo sendo se é tornar referência em pesquisa de caros usados, valorizando a qualidade das pesquisas, gerando sempre a melhor experiência ao nosso cliente.</p>
+                </div>
+                <div class="lower">
+                    <div class="topic">Contato</div>
+                    <div class="phone">
+                        <a href="#"><i class="fas fa-phone-volume"></i>+007 9089 6767</a>
+                    </div>
+                    <div class="email">
+                        <a href="#"><i class="fas fa-envelope"></i>tnmContato@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right box">
+                <div class="topic">Inscreva-se para receber novidades</div>
+                <form action="#">
+                    <input type="text" name="email" id="email" placeholder="Digite seu email">
+                    <input type="submit" name="email" id="inscrever" value="Inscrever">
+                    <div class="media-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="bottom">
+            <p>Copyright © 2022 <a href="#">TNM Cars</a> Todos os direitos reservados</p>
+        </div>
+    </footer>
+    <div class="alteracoes">
+        
+    </div>
+    <!-- fim footer -->
+</body>
+
+</html>

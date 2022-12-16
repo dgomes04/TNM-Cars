@@ -25,7 +25,7 @@ module.exports = async (request, response) => {
     }
     
     if (dados[0].confirmacao == 'N') {
-        return response.status(400).json({ error: `Olá, Favor confirmar seu cadastro pelo e-mail` })
+        return response.status(400).json({ error: `Favor confirmar seu cadastro pelo e-mail` })
     }
 
     const { senhaCryp, nome, id, email, usuario, telefone } = dados[0]

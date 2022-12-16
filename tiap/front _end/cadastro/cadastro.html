@@ -3,58 +3,103 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TNM Cars</title>
-    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style-with-prefix.css">
-    <script src="cadastro.js"></script>
-    <style></style>
+    <link rel="stylesheet" href="assets/css/cadastro.css">
+    <script src="assets/js/cadastro.js"></script>
+    <title>Cadastro</title>
 </head>
 
 <body>
+    <div class="container">
+        <div class="form-image">
+            <div class="titulo">
+                <h1 style="color: white;">Olá, usuário(a)!</h1>
+            </div>
+            <div class="mensagem">
+                
+            <h2 id="informe" style="color: white;">Informe seus dados de úsuario para realizar seu cadastro</h2>
+            </div>
+            
+        </div>
+        <div class="form">
+            <div>
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Cadastre-se</h1>
+                    </div>
+                    <div class="login-button">
+                        <a href="../login/login.html" style="color: black;"><button>Entrar</button></a>
+                    </div>
+                </div>
 
-    <div class="main-container">
-        <div class="form-container">
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="firstname">Nome completo</label>
+                        <input id="nome" type="text" name="firstname" placeholder="Nome completo" required>
+                    </div>
 
-            <div class="form-body">
+                    <div class="input-box">
+                        <label for="lastname">Usuário</label>
+                        <input id="usuario" type="text" name="lastname" placeholder="Usuario" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
+                    </div>
 
-        
-                <h2 class="title" style="padding-bottom: 5%;">Criar Conta</h2>
+                    <div class="input-box">
+                        <label for="number">Celular</label>
+                        <input id="telefone" type="tel" name="number" placeholder="(xx) xxxx-xxxx" required>
+                    </div>
 
-                <form action="#" class="the-form" onsubmit="return cadastrar()">
+                    <div class="input-box">
+                        <label for="password">Senha</label>
+                        <input id="senha" type="password" name="password" placeholder="Digite sua senha" required>
+                    </div>
 
-                    <label for="nome">Nome Completo</label>
-                    <input type="text" name="nome" id="nome" placeholder="Nome">
 
-                    <label for="email">E-mail</label>
-                    <input type="email" name="email" id="email" placeholder="E-mail">
+                    <div class="input-box">
+                        <label for="confirmPassword">Confirme sua Senha</label>
+                        <input id="confirma_senha" type="password" name="confirmPassword" placeholder="Digite sua senha novamente" required>
+                    </div>
 
-                    <label for="email">Telefone</label>
-                    <input type="tel" name="telefone" id="telefone" placeholder="Telefone">
+                </div>
 
-                    <label for="email">Usuário</label>
-                    <input type="text" name="usuario" id="usuario" placeholder="Usuário">
+                <div class="gender-inputs">
+                    <div class="gender-title">
+                        <h6>Gênero</h6>
+                    </div>
 
-                    <label for="senha">Senha</label>
-                    <input type="password" name="senha" id="senha" placeholder="Senha">
+                    <div class="gender-group">
+                        <div class="gender-input">
+                            <input id="female" type="radio" name="gender">
+                            <label for="female">Feminino</label>
+                        </div>
 
-                    <label for="confirmacao">Confirmação de senha</label>
-                    <input type="password" name="confirmacao" id="confirmacao" placeholder="Confirme a sua senha">
+                        <div class="gender-input">
+                            <input id="male" type="radio" name="gender">
+                            <label for="male">Masculino</label>
+                        </div>
 
-                    <input type="submit" value="Cadastrar">
-                    <a href="../login/login.html">Cancelar</a>
-                </form>
+                        <div class="gender-input">
+                            <input id="others" type="radio" name="gender">
+                            <label for="others">Outros</label>
+                        </div>
 
+                        <div class="gender-input">
+                            <input id="none" type="radio" name="gender">
+                            <label for="none">Prefiro não dizer</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="continue-button">
+                    <button onclick="cadastrar()"><a  style="color: black;">Cadastrar</a> </button>
+                </div>
             </div>
         </div>
     </div>
-
-    <footer>
-        <div class="bottom">
-            <p>© Todos os direitos reservados - TNM Cars - 2022 PUC MINAS</p>
-        </div>
-    </footer>
-
 </body>
 
 </html>

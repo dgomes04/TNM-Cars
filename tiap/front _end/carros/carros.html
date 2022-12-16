@@ -10,15 +10,18 @@
 
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-    <link rel="stylesheet" href="carros.css">
+    <link rel="stylesheet" href="Assets/css/carros.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
     <title>Carros</title>
 
 
 </head>
 <!-- onload= -->
-
-<body id="body" onload="montaCardPesquisa(), verificar_favoritos()"></body>
+<!-- , verificar_favoritos() -->
+<body id="body" onload="montaCardPesquisa(), verLogin()"></body>
 <header>
     <nav>
         
@@ -28,10 +31,12 @@
             <i class="fas fa-bars"></i>
         </label>
         <ul>
-            <li><a class="active" href="../index.html" onclick="resetarForm()">Home</a></li>
+            <li><a href="../index.html" onclick="resetarForm()">Home</a></li>
             <li><a href="../carros/carros.html" onclick="resetarForm()">Carros</a></li>
+            <li id="favoritos"><a href="" hidden></a></li>
             <li><a href="../pesquisa/pesquisa.html" onclick="resetarForm()">Notícias</a></li>
-            <li id="perfil"><a href="../perfil/perfil.html" onclick="resetarForm()">Perfil</a></li>
+            <li id="perfil"><a href="..//login/login.html" onclick="resetarForm()">Logar</a></li>
+            
         </ul>
     </nav>
 </header>
@@ -50,13 +55,17 @@
                 <select name="marca" class="marcaV" id="dropdown">
                     <option selected value="Todos">Marca</option>
                     <option value="fiat">Fiat</option>
-                    <option value="volksvagem">Volksvagem</option>
+                    <option value="volkswagen">Volkswagen</option>
                     <option value="renault">Renault</option>
-                    <option value="chevrolett">Chevrolet</option>
+                    <option value="chevrolet">Chevrolet</option>
                     <option value="hyundai">Hyundai</option>
                     <option value="peugeot">Peugeot</option>
                     <option value="ford">Ford</option>
-                    <option value="mercedes">Mercedes</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Kia">Kia</option>
+                    <option value="mercedes-benz">Mercedes</option>
                 </select>
                 <select name="carroceria"class="carroceriaV" id="dropdown">
                     <option selected value="Todos">Carroceria</option>
@@ -64,6 +73,7 @@
                     <option value="sedan">Sedan</option>
                     <option value="picape">Picape</option>
                     <option value="suv">SUV</option> 
+                    <option value="van">Van</option> 
                     <option value="todos">todos</option>      
                 </select>
                 <select name="cambio" class="cambioV" id="dropdown">
@@ -76,6 +86,12 @@
                     <option value="novo">0 KM</option>
                     <option value="usado">Usado</option>
                 </select>
+                <select name="marca" class="corV" id="dropdown">
+                    <option selected value="Todos">Cor</option>
+                    <option value="Branco">Branco</option>
+                    <option value="Preto">Preto</option>
+                    <option value="Cinza">Cinza</option>
+                </select>
             </div>
             <div class="buscar">
                 <button class="btn_pesquisar" onclick="filtrar()">Pesquisar</button>
@@ -84,10 +100,10 @@
         <ul id="carrosDiv">
 
         </ul>
-
+        
     </div>
 
-
+   
 
 </main>
 
@@ -101,8 +117,7 @@
         <div class="left box">
             <div class="upper">
                 <div class="topic">Sobre nós</div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, voluptatem, porro dolorum harum
-                    tempore nemo excepturi velit minus reiciendis quae esse vero asperiores odio incidunt.</p>
+                <p>Somos um portal de consulta de preços voltados ao mercado automotivo, em busca de fornecer ajuda a interessados em comprar do seu futuro automóvel. A razão da nossa existência é justamente ser o fator facilitador ao procurar de um veículo. Com nosso verdadeiro objetivo sendo se é tornar referência em pesquisa de caros usados, valorizando a qualidade das pesquisas, gerando sempre a melhor experiência ao nosso cliente.</p>
             </div>
             <div class="lower">
                 <div class="topic">Contato</div>
@@ -136,11 +151,20 @@
 </footer>
 
 
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-    crossorigin="anonymous"></script>
-<script src="carros.js"></script>
+<div class="alteracoes">
+    <style>
+        .anterior:hover{
+            background-color: lightgray;
+        }
+        .proximo:hover{
+            background-color: lightgray;
+        }
+    </style>
+</div>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src="Assets/js/carros.js"></script>
+<script src="Assets/js/paginacao.js"></script>
 </body>
 
 </html>

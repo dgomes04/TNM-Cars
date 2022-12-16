@@ -3,9 +3,9 @@ const connection = require('../connection')
 module.exports = async (request, response) => {
     const data = request.body
 
-    if (data.estado && data.marca && data.carroceria && data.cambio) {
+    if (data.estado && data.marca && data.carroceria && data.cambio && data.cor) {
 
-        const { estado, marca, carroceria, cambio } = request.body
+        const { estado, marca, carroceria, cambio, cor } = request.body
 
         let querySelect = `select * from carros `
 
@@ -48,6 +48,16 @@ module.exports = async (request, response) => {
             querySelect += ``
         } else {
             querySelect += `${comando} cambio = '${cambio}'`
+        }
+
+        if (querySelect != 'select * from carros ') {
+            comando = 'and'
+        }
+
+        if (cor == 'Todos') {
+            querySelect += ``
+        } else {
+            querySelect += `${comando} cor = '${cor}'`
         }
 
         const carros = await connection.awaitQuery(querySelect);
